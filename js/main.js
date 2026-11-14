@@ -5,8 +5,6 @@
   const navToggle = document.querySelector(".nav__toggle");
   const navPanel = document.querySelector(".nav__panel");
   const navLinks = Array.from(document.querySelectorAll(".nav__link"));
-  const sections = Array.from(document.querySelectorAll("main section[id]"));
-  const pageCurrent = document.getElementById("page-current");
   const year = document.getElementById("year");
 
   if (year) {
@@ -61,58 +59,29 @@
   }
 
   /* ------------------------------------------------------------------------
-     Scroll spy + page marker
+     Header background after scrolling
      ------------------------------------------------------------------------ */
 
-  let scrollTicking = false;
+  if (nav) {
+    let ticking = false;
 
-  const updateActiveSection = () => {
-    if (!sections.length) return;
+    const updateHeader = () => {
+      nav.classList.toggle("is-scrolled", window.scrollY > 8);
+      ticking = false;
+    };
 
-    const probe = window.scrollY + Math.min(window.innerHeight * 0.35, 280);
-    let current = sections[0];
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateHeader);
+      },
+      { passive: true }
+    );
 
-    sections.forEach((section) => {
-      const top = section.getBoundingClientRect().top + window.scrollY;
-      if (top <= probe) current = section;
-    });
-
-    // Keep the final section active when the page is scrolled to the bottom.
-    const atBottom =
-      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-    if (atBottom) current = sections[sections.length - 1];
-
-    const activeId = current.id;
-
-    navLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === "#" + activeId;
-      link.classList.toggle("is-active", isActive);
-
-      if (isActive) {
-        link.setAttribute("aria-current", "location");
-      } else {
-        link.removeAttribute("aria-current");
-      }
-    });
-
-    if (pageCurrent && current.dataset.page) {
-      pageCurrent.textContent = current.dataset.page;
-    }
-  };
-
-  const onScroll = () => {
-    if (scrollTicking) return;
-    scrollTicking = true;
-
-    window.requestAnimationFrame(() => {
-      updateActiveSection();
-      scrollTicking = false;
-    });
-  };
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  updateActiveSection();
+    updateHeader();
+  }
 
   /* ------------------------------------------------------------------------
      Scroll reveal
@@ -142,6 +111,102 @@
   }
 
   /* ------------------------------------------------------------------------
+     Filterable project / certificate grids
+     ------------------------------------------------------------------------ */
+
+  const filterGroups = Array.from(document.querySelectorAll("[data-filter-group]"));
+
+  filterGroups.forEach((group) => {
+    const key = group.dataset.filterGroup;
+    const list = document.querySelector('[data-filter-list="' + key + '"]');
+    if (!list) return;
+
+    const items = Array.from(list.querySelectorAll("[data-categories]"));
+    const count = group.querySelector("[data-filter-count]");
+    const noun = group.dataset.filterNoun || "item";
+    const buttons = Array.from(group.querySelectorAll(".filter"));
+
+    const update = (value) => {
+      let visible = 0;
+
+      items.forEach((item) => {
+        const categories = (item.dataset.categories || "").split(/\s+/);
+        const show = value === "all" || categories.indexOf(value) !== -1;
+        item.hidden = !show;
+        if (show) visible += 1;
+      });
+
+      buttons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.filter === value));
+      });
+
+      if (count) {
+        count.textContent = visible + " " + noun + (visible === 1 ? "" : "s");
+      }
+    };
+
+    group.addEventListener("click", (event) => {
+      const button = event.target.closest(".filter");
+      if (!button) return;
+      update(button.dataset.filter);
+    });
+
+    update("all");
+  });
+
+  /* ------------------------------------------------------------------------
+     Copy credential IDs to the clipboard
+     ------------------------------------------------------------------------ */
+
+  const copyStatus = document.getElementById("copy-status");
+
+  const announce = (message) => {
+    if (copyStatus) copyStatus.textContent = message;
+  };
+
+  const copyText = async (value) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+      return;
+    }
+
+    const helper = document.createElement("textarea");
+    helper.value = value;
+    helper.setAttribute("readonly", "");
+    helper.style.position = "fixed";
+    helper.style.opacity = "0";
+    document.body.appendChild(helper);
+    helper.select();
+
+    const copied = document.execCommand("copy");
+    document.body.removeChild(helper);
+
+    if (!copied) throw new Error("copy failed");
+  };
+
+  document.querySelectorAll("[data-copy]").forEach((button) => {
+    const initialLabel = button.textContent.trim();
+
+    button.addEventListener("click", async () => {
+      const value = button.dataset.copy || "";
+
+      try {
+        await copyText(value);
+        button.textContent = "Copied";
+        button.classList.add("is-copied");
+        announce("Copied " + value + " to the clipboard.");
+
+        window.setTimeout(() => {
+          button.textContent = initialLabel;
+          button.classList.remove("is-copied");
+        }, 1800);
+      } catch (error) {
+        announce("Copy failed. Select the credential code and copy it manually.");
+      }
+    });
+  });
+
+  /* ------------------------------------------------------------------------
      Contact form — opens the visitor's email client with a prefilled draft
      ------------------------------------------------------------------------ */
 
@@ -160,9 +225,10 @@
       const data = new FormData(form);
       const name = String(data.get("name") || "").trim();
       const email = String(data.get("email") || "").trim();
+      const subjectInput = String(data.get("subject") || "").trim();
       const message = String(data.get("message") || "").trim();
 
-      const subject = "Portfolio enquiry from " + name;
+      const subject = subjectInput || "Portfolio enquiry from " + name;
       const body = "Name: " + name + "\nEmail: " + email + "\n\n" + message;
       const mailto =
         "mailto:dipanjann804@gmail.com" +

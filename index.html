@@ -11,6 +11,7 @@
   <meta name="color-scheme" content="dark">
 
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dipanjan Nandi">
   <meta property="og:title" content="Dipanjan Nandi — Cybersecurity &amp; AI Developer">
   <meta property="og:description" content="Defending systems with intelligent security. Email forensics, threat intelligence and AI-driven document screening.">
   <meta property="og:image" content="assets/og-image.png">
@@ -56,6 +57,11 @@
           padding: 8px 10px;
           font-size: 0.8rem;
         }
+
+        .nav__cta {
+          display: inline-flex;
+          margin-left: auto;
+        }
       }
     </style>
   </noscript>
@@ -68,6 +74,7 @@
     "jobTitle": "Cybersecurity & AI Developer",
     "description": "Security-focused Computer Science undergraduate building AI-powered threat intelligence, forensic tooling and identity verification systems.",
     "email": "dipanjann804@gmail.com",
+    "telephone": "+91-8293103406",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "West Bengal",
@@ -102,7 +109,11 @@
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a class="nav__brand" href="#home" aria-label="DN. — Dipanjan Nandi, back to home">DN<span>.</span></a>
+      <a class="nav__brand" href="index.html">
+        <span class="nav__mark" aria-hidden="true">DN</span>
+        <span class="nav__word">dipanjan<span>.</span></span>
+        <span class="sr-only">Dipanjan Nandi — home</span>
+      </a>
 
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
         <span class="sr-only">Open navigation menu</span>
@@ -111,448 +122,208 @@
 
       <div class="nav__panel" id="primary-menu">
         <ul class="nav__list">
-          <li><a class="nav__link is-active" href="#home" aria-current="location">Home</a></li>
-          <li><a class="nav__link" href="#about">About</a></li>
-          <li><a class="nav__link" href="#skills">Skills</a></li>
-          <li><a class="nav__link" href="#projects">Projects</a></li>
-          <li><a class="nav__link" href="#experience">Experience</a></li>
-          <li><a class="nav__link" href="#certificates">Certificates</a></li>
-          <li><a class="nav__link" href="#contact">Contact</a></li>
+          <li><a class="nav__link is-active" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="projects.html">Projects</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="certificates.html">Certificates</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
         </ul>
       </div>
 
-      <p class="nav__status"><span class="status-dot" aria-hidden="true"></span>Open to work</p>
+      <a class="btn btn--primary nav__cta" href="contact.html">Hire me</a>
     </nav>
   </header>
 
   <main id="main">
     <!-- 01 — Home -->
-    <section class="section hero" id="home" data-page="01" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <div class="hero__intro">
-          <p class="eyebrow" data-reveal>Cybersecurity &amp; AI Developer</p>
-          <h1 id="hero-title" data-reveal style="--delay: 60ms">Dipanjan <span class="text-accent">Nandi</span></h1>
-          <p class="hero__tagline" data-reveal style="--delay: 120ms">Defending systems with <span class="text-soft">intelligent security</span></p>
-          <p class="hero__meta" data-reveal style="--delay: 180ms">
-            Computer Science undergraduate at GNIT (MAKAUT) <span aria-hidden="true">·</span> West Bengal, India
-          </p>
-          <div class="hero__actions" data-reveal style="--delay: 240ms">
-            <a class="btn btn--secondary" href="#projects">
-              See my work
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-            <a class="btn btn--primary" href="#contact">
-              Get in touch
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-          </div>
-        </div>
+        <div class="hero__layout">
+          <div class="hero__copy">
+            <div class="hero__top">
+              <p class="eyebrow">01 · Home</p>
+              <p class="pill-live"><span class="status-dot" aria-hidden="true"></span>Open to work</p>
+            </div>
 
-        <div class="hero__grid">
-          <article class="bento bento--feature" data-reveal style="--delay: 160ms">
-            <span class="chip chip--solid">Open to work</span>
-            <p class="bento__quote">I prioritize explainable security, turning forensic signals into clear, actionable decisions.</p>
-          </article>
+            <h1 class="hero__title" id="hero-title">Dipanjan <span class="text-accent">Nandi</span></h1>
+            <p class="hero__role">Cybersecurity &amp; AI developer</p>
+            <p class="hero__lead">
+              I design and build security-first web tools — from email threat intelligence and
+              phishing detection to credential vaults and the interfaces around them.
+            </p>
 
-          <article class="bento" data-reveal style="--delay: 220ms">
-            <h2 class="bento__title">Open to internships and collaborations</h2>
-            <ul class="chip-row" aria-label="Location and languages">
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="projects.html">
+                View projects
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+              <a class="btn btn--secondary" href="assets/Dipanjan-Nandi-CV.pdf" download="Dipanjan-Nandi-CV.pdf" type="application/pdf">
+                Download CV
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+              </a>
+            </div>
+
+            <ul class="hero__meta" aria-label="Location, languages and work preference">
               <li class="chip">West Bengal, India</li>
               <li class="chip">EN · BN · HI</li>
+              <li class="chip">Remote / hybrid</li>
             </ul>
-          </article>
-
-          <article class="bento" data-reveal style="--delay: 280ms">
-            <h2 class="bento__title">My tech stack</h2>
-            <ul class="chip-row" aria-label="Core technologies">
-              <li class="chip">Python</li>
-              <li class="chip">C</li>
-              <li class="chip">C++</li>
-              <li class="chip">SQL</li>
-              <li class="chip">Git</li>
-              <li class="chip">GitHub</li>
-            </ul>
-          </article>
-
-          <article class="bento" data-reveal style="--delay: 340ms">
-            <p class="bento__statement">Security-first, from email forensics to fake-ID screening.</p>
-            <p class="bento__meta">SIH 2026 <span aria-hidden="true">·</span> Two systems built</p>
-          </article>
-
-          <article class="bento" data-reveal style="--delay: 400ms">
-            <h2 class="bento__title">Want to start a project together?</h2>
-            <a class="btn btn--primary btn--small" href="#contact">
-              Get in touch
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 — About -->
-    <section class="section" id="about" data-page="02" aria-labelledby="about-title">
-      <div class="container">
-        <header class="section-heading" data-reveal>
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">About <span class="text-accent">Me</span></h2>
-        </header>
-
-        <div class="about-grid">
-          <div class="stack">
-            <article class="card about-card" data-reveal>
-              <p class="card-label">Who I am</p>
-              <p class="about-copy">
-                Security-focused Computer Science undergraduate at Guru Nanak Institute of Technology
-                (MAKAUT), with hands-on experience in cybersecurity operations, vulnerability analysis
-                and GenAI-driven data analytics. I architect modular microservices in Python, C and C++,
-                and have built Smart India Hackathon systems for forensic email threat intelligence and
-                fake identity screening.
-              </p>
-            </article>
-
-            <article class="card about-card" data-reveal style="--delay: 80ms">
-              <p class="card-label">Education</p>
-              <ul class="education">
-                <li>
-                  <span class="education__title">Undergraduate, Computer Science</span>
-                  <span class="education__meta">GNIT (MAKAUT) <span aria-hidden="true">·</span> Present</span>
-                </li>
-                <li>
-                  <span class="education__title">Higher Secondary (Class XII)</span>
-                  <span class="education__meta">Pandua Sasi Bhusan Saha High School <span aria-hidden="true">·</span> 2024</span>
-                </li>
-                <li>
-                  <span class="education__title">Secondary Examination (Class X)</span>
-                  <span class="education__meta">Ramakrishna High School <span aria-hidden="true">·</span> 2022</span>
-                </li>
-              </ul>
-              <p class="coursework">
-                <span>Relevant coursework</span>
-                Vulnerability Analysis, Penetration Testing &amp; Incident Handling · Fundamentals of
-                Computing using C and C++ · Discrete Structures &amp; Statistics · Financial Management
-              </p>
-            </article>
           </div>
 
-          <div class="stats">
-            <article class="stat-card" data-reveal style="--delay: 80ms">
-              <p class="stat-number">03</p>
-              <p class="stat-label">Internships &amp; job simulations</p>
-            </article>
-            <article class="stat-card" data-reveal style="--delay: 160ms">
-              <p class="stat-number">02</p>
-              <p class="stat-label">Smart India Hackathon systems</p>
-            </article>
-            <article class="stat-card" data-reveal style="--delay: 240ms">
-              <p class="stat-number">04</p>
-              <p class="stat-label">Verified certifications</p>
-            </article>
+          <aside class="profile-card" aria-label="Profile summary">
+            <div class="profile-card__visual">
+              <span class="profile-card__monogram" aria-hidden="true">DN</span>
+            </div>
+            <div class="profile-card__body">
+              <p class="profile-card__name">Dipanjan Nandi</p>
+              <p class="profile-card__role">B.Tech CSE · GNIT (MAKAUT)</p>
+              <dl class="profile-card__facts">
+                <div>
+                  <dt>Focus</dt>
+                  <dd>Threat intelligence &amp; secure web</dd>
+                </div>
+                <div>
+                  <dt>Core stack</dt>
+                  <dd>Python · Flask · JavaScript</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd><span class="status-dot" aria-hidden="true"></span>Open to work</dd>
+                </div>
+              </dl>
+            </div>
+          </aside>
+        </div>
+
+        <div class="hero__stats" data-reveal>
+          <div class="stat">
+            <p class="stat__value">03</p>
+            <p class="stat__label">Internships &amp; job simulations</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value">02</p>
+            <p class="stat__label">Smart India Hackathon builds</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value">04</p>
+            <p class="stat__label">Verified credentials</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value">03</p>
+            <p class="stat__label">Live projects</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 03 — Skills -->
-    <section class="section" id="skills" data-page="03" aria-labelledby="skills-title">
-      <div class="container">
-        <header class="section-heading" data-reveal>
-          <p class="eyebrow">Tech stack</p>
-          <h2 id="skills-title">My <span class="text-accent">Skills</span></h2>
-        </header>
-
-        <div class="skills-grid">
-          <article class="card skill-card" data-reveal>
-            <h3>Programming</h3>
-            <ul class="skill-list">
-              <li>Python</li>
-              <li>C</li>
-              <li>C++</li>
-              <li>SQL</li>
-              <li>Microservice architecture</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card" data-reveal style="--delay: 70ms">
-            <h3>Cybersecurity &amp; Forensics</h3>
-            <ul class="skill-list">
-              <li>Vulnerability Analysis</li>
-              <li>Penetration Testing</li>
-              <li>Incident Handling</li>
-              <li>Email Header Forensics</li>
-              <li>Malware Analysis</li>
-              <li>Web Application Security</li>
-              <li>IP Origin Tracing</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card" data-reveal style="--delay: 140ms">
-            <h3>AI &amp; Data Analytics</h3>
-            <ul class="skill-list">
-              <li>Exploratory Data Analysis</li>
-              <li>Risk Profiling</li>
-              <li>Delinquency Prediction</li>
-              <li>NLP Threat Classification</li>
-              <li>OCR Extraction</li>
-              <li>Explainable Risk Scoring</li>
-            </ul>
-          </article>
-
-          <article class="card skill-card" data-reveal style="--delay: 210ms">
-            <h3>Systems &amp; Hardware</h3>
-            <ul class="skill-list">
-              <li>Hardware diagnostics</li>
-              <li>Preventive Maintenance</li>
-              <li>Networking Fundamentals</li>
-              <li>Operating Systems</li>
-              <li>Git &amp; GitHub</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 — Projects -->
-    <section class="section" id="projects" data-page="04" aria-labelledby="projects-title">
+    <!-- Featured work -->
+    <section class="section" aria-labelledby="featured-title">
       <div class="container">
         <div class="section-head">
           <header class="section-heading" data-reveal>
             <p class="eyebrow">Selected work</p>
-            <h2 id="projects-title">Featured <span class="text-accent">Projects</span></h2>
+            <h2 id="featured-title">Things I've <span class="text-accent">built</span></h2>
           </header>
-          <a class="ghost-link" href="https://github.com/dipanjann804-svg?tab=repositories" target="_blank" rel="noopener noreferrer" data-reveal>
-            All repositories
+          <a class="ghost-link" href="projects.html" data-reveal>
+            All projects
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card project-card--feature" data-reveal>
-            <span class="chip chip--solid">SIH 2026</span>
-            <h3>ThreatScan</h3>
-            <p class="project-copy">
-              AI-powered email threat detection and forensic intelligence: header forensics, IP
-              geolocation tracing, NLP classification and explainable risk scoring.
-            </p>
-
-            <pre class="code-block" tabindex="0" aria-label="Illustrative ThreatScan risk-scoring workflow"><code><span class="code-comment">// explainable risk scoring (illustrative)</span>
-<span class="code-key">risk</span> = correlate(headers, ip_origin, nlp)
-<span class="code-key">report</span> = explain(risk)
-<span class="code-arrow">→</span> analyst triage report generated</code></pre>
-
-            <ul class="tags" aria-label="ThreatScan capabilities">
-              <li class="tag">Header forensics</li>
-              <li class="tag">IP tracing</li>
-              <li class="tag">NLP</li>
-            </ul>
+        <div class="cards-3">
+          <article class="project-card" data-reveal>
+            <div class="project-thumb project-thumb--violet">
+              <span class="project-thumb__badge">Live</span>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5 9 11v11c0 9.6 6.2 17.2 15 21 8.8-3.8 15-11.4 15-21V11L24 5Z"/><circle cx="24" cy="21" r="4.5"/><path d="M24 25.5V31"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Secure Vault System</h3>
+              <p class="project-copy">
+                An encrypted credential vault with authenticated sessions, hashed passwords and
+                protected routes.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">Flask</li>
+                <li class="tag">Security</li>
+              </ul>
+              <div class="project-links">
+                <a class="project-link" href="https://secure-vault-system.onrender.com/" target="_blank" rel="noopener noreferrer">
+                  Live demo
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </div>
           </article>
 
-          <div class="project-stack">
-            <article class="project-card" data-reveal style="--delay: 90ms">
-              <span class="chip">SIH · PS 26188</span>
-              <h3>Netraksha</h3>
+          <article class="project-card" data-reveal style="--delay: 90ms">
+            <div class="project-thumb project-thumb--teal">
+              <span class="project-thumb__badge">Live</span>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="38" height="25" rx="4"/><path d="m6 16 18 12 18-12"/><circle cx="37" cy="11" r="7"/><path d="M37 7.5v4M37 14.5h.01"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Phishing Email Detection</h3>
               <p class="project-copy">
-                AI-based fake identity and document screening: OCR extraction, structural validation,
-                tampering detection and facial verification microservices.
+                A detection app that scores incoming emails for phishing risk and reports an
+                explainable verdict.
               </p>
-              <ul class="tags" aria-label="Netraksha capabilities">
-                <li class="tag">OCR</li>
-                <li class="tag">Tamper detection</li>
-                <li class="tag">Face verification</li>
-              </ul>
-            </article>
-
-            <article class="project-card" data-reveal style="--delay: 160ms">
-              <span class="chip">2025 – 2026</span>
-              <h3>Algorithms Lab</h3>
-              <p class="project-copy">
-                C, C++ and Python implementations of greedy optimization, recursion, modular arithmetic
-                and complexity benchmarking.
-              </p>
-              <ul class="tags" aria-label="Algorithms Lab languages">
-                <li class="tag">C</li>
-                <li class="tag">C++</li>
+              <ul class="tags" aria-label="Technologies">
                 <li class="tag">Python</li>
+                <li class="tag">Classification</li>
               </ul>
-            </article>
+              <div class="project-links">
+                <a class="project-link" href="https://phishing-email-detection-green.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Live demo
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal style="--delay: 180ms">
+            <div class="project-thumb project-thumb--amber">
+              <span class="project-thumb__badge">Live</span>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="21" r="7"/><path d="m23 26 14 14M31 34l4-4M35 38l4-4"/></svg>
+            </div>
+            <div class="project-body">
+              <h3>Password Generator</h3>
+              <p class="project-copy">
+                A browser-based generator for strong, configurable passwords with length and
+                character-set controls.
+              </p>
+              <ul class="tags" aria-label="Technologies">
+                <li class="tag">JavaScript</li>
+                <li class="tag">CSS3</li>
+              </ul>
+              <div class="project-links">
+                <a class="project-link" href="https://password-generator-sandy-phi.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Live demo
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <div>
+            <h2 id="cta-title">Have a project or a role in mind?</h2>
+            <p>I'm open to internships, collaborations and security-focused builds. Tell me what you're working on.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 — Experience -->
-    <section class="section" id="experience" data-page="05" aria-labelledby="experience-title">
-      <div class="container">
-        <header class="section-heading" data-reveal>
-          <p class="eyebrow">Journey</p>
-          <h2 id="experience-title">My <span class="text-accent">Experience</span></h2>
-        </header>
-
-        <div class="experience-grid">
-          <article class="card exp-card" data-reveal>
-            <span class="chip">AUG – SEPT 2026</span>
-            <h3>Cyber Security Intern</h3>
-            <p class="exp-org">Thiranex EduTech LLP <span aria-hidden="true">·</span> Remote</p>
-            <p class="exp-copy">
-              Threat detection, vulnerability assessment and system hardening under industry mentorship,
-              with periodic technical evaluations on incident response.
-            </p>
-            <ul class="tags" aria-label="Focus areas">
-              <li class="tag">Threat detection</li>
-              <li class="tag">Hardening</li>
-            </ul>
-          </article>
-
-          <article class="card exp-card" data-reveal style="--delay: 80ms">
-            <span class="chip">JULY 2026</span>
-            <h3>GenAI Data Analytics</h3>
-            <p class="exp-org">Tata (via Forage) <span aria-hidden="true">·</span> Job Simulation</p>
-            <p class="exp-copy">
-              EDA and customer risk profiling for delinquency, a predictive AI workflow, and an executive
-              report on an AI-driven collections strategy.
-            </p>
-            <ul class="tags" aria-label="Focus areas">
-              <li class="tag">EDA</li>
-              <li class="tag">Risk profiling</li>
-            </ul>
-          </article>
-
-          <article class="card exp-card" data-reveal style="--delay: 160ms">
-            <span class="chip">JUNE – JULY 2026</span>
-            <h3>Cyber Job Simulation</h3>
-            <p class="exp-org">Deloitte (via Forage)</p>
-            <p class="exp-copy">
-              Log inspection, anomaly identification and breach impact evaluation, with structured
-              remediation steps to strengthen cyber resilience.
-            </p>
-            <ul class="tags" aria-label="Focus areas">
-              <li class="tag">Log inspection</li>
-              <li class="tag">Remediation</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 — Certificates -->
-    <section class="section" id="certificates" data-page="06" aria-labelledby="certificates-title">
-      <div class="container">
-        <header class="section-heading" data-reveal>
-          <p class="eyebrow">Credentials</p>
-          <h2 id="certificates-title">Verified <span class="text-accent">Certificates</span></h2>
-        </header>
-
-        <div class="cert-grid">
-          <article class="card cert-card" data-reveal>
-            <div class="cert-top">
-              <span class="chip">SEPT 2026</span>
-              <span class="cert-index" aria-hidden="true">01</span>
-            </div>
-            <div class="cert-body">
-              <h3>Cyber Security Internship</h3>
-              <p class="cert-issuer">Thiranex EduTech LLP</p>
-            </div>
-          </article>
-
-          <article class="card cert-card" data-reveal style="--delay: 70ms">
-            <div class="cert-top">
-              <span class="chip">JULY 2026</span>
-              <span class="cert-index" aria-hidden="true">02</span>
-            </div>
-            <div class="cert-body">
-              <h3>GenAI Powered Data Analytics</h3>
-              <p class="cert-issuer">Tata / Forage</p>
-            </div>
-          </article>
-
-          <article class="card cert-card" data-reveal style="--delay: 140ms">
-            <div class="cert-top">
-              <span class="chip">JULY 2026</span>
-              <span class="cert-index" aria-hidden="true">03</span>
-            </div>
-            <div class="cert-body">
-              <h3>Cyber Job Simulation</h3>
-              <p class="cert-issuer">Deloitte / Forage</p>
-            </div>
-          </article>
-
-          <article class="card cert-card" data-reveal style="--delay: 210ms">
-            <div class="cert-top">
-              <span class="chip">JUNE 2025</span>
-              <span class="cert-index" aria-hidden="true">04</span>
-            </div>
-            <div class="cert-body">
-              <h3>Computer Hardware Basics</h3>
-              <p class="cert-issuer">Cisco Networking Academy</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 07 — Contact -->
-    <section class="section" id="contact" data-page="07" aria-labelledby="contact-title">
-      <div class="container">
-        <header class="section-heading" data-reveal>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Get in <span class="text-accent">Touch</span></h2>
-        </header>
-
-        <div class="contact-grid">
-          <article class="contact-card" data-reveal>
-            <h3>Want to start a<br>project together?</h3>
-            <p class="contact-lead">
-              Open to internships, collaborations and conversations around cybersecurity, AI-driven
-              threat intelligence and secure software.
-            </p>
-
-            <div class="contact-list">
-              <a class="contact-row" href="mailto:dipanjann804@gmail.com">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                <span class="contact-label">Email</span>
-                <span class="contact-value">dipanjann804@gmail.com</span>
-                <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
-
-              <a class="contact-row" href="https://www.linkedin.com/in/dipanjan-nandi-754028374" target="_blank" rel="noopener noreferrer">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1 0 3.88 1.94 1.94 0 0 1 0-3.88ZM5.3 10.2h3.3V19H5.3v-8.8Zm5.4 0h3.16v1.2h.05c.44-.83 1.52-1.7 3.13-1.7 3.35 0 3.97 2.2 3.97 5.06V19h-3.3v-3.75c0-.9-.02-2.06-1.25-2.06-1.25 0-1.44.98-1.44 1.99V19h-3.32v-8.8Z"/></svg>
-                <span class="contact-label">LinkedIn</span>
-                <span class="contact-value">linkedin.com/in/dipanjan-nandi-754028374</span>
-                <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
-
-              <a class="contact-row" href="https://github.com/dipanjann804-svg" target="_blank" rel="noopener noreferrer">
-                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
-                <span class="contact-label">GitHub</span>
-                <span class="contact-value">github.com/dipanjann804-svg</span>
-                <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="card contact-form-card" data-reveal style="--delay: 90ms">
-            <h3>Send me a message</h3>
-            <form id="contact-form" action="mailto:dipanjann804@gmail.com" method="post" enctype="text/plain">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me about your project or idea…" required></textarea>
-              </div>
-              <button class="btn btn--primary btn--full" type="submit">
-                Send message
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </button>
-              <p class="form-note">This opens your email app with the message pre-filled.</p>
-              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-            </form>
-          </article>
+          <div class="cta-band__actions">
+            <a class="btn btn--primary" href="contact.html">
+              Get in touch
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn--secondary" href="assets/Dipanjan-Nandi-CV.pdf" download="Dipanjan-Nandi-CV.pdf" type="application/pdf">
+              Download CV
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -562,14 +333,16 @@
     <div class="container footer-inner">
       <p>© <span id="year">2026</span> Dipanjan Nandi</p>
       <p class="footer-tagline">Built with curiosity, secured by design.</p>
-      <a class="back-to-top" href="#home">
-        Back to top
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-      </a>
+      <div class="footer-links">
+        <a href="https://github.com/dipanjann804-svg" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/dipanjan-nandi-754028374" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="back-to-top" href="#main">
+          Back to top
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </a>
+      </div>
     </div>
   </footer>
-
-  <div class="page-marker" aria-hidden="true"><span id="page-current">01</span><span class="page-marker__sep">/</span>07</div>
 
   <script src="js/main.js" defer></script>
 </body>
