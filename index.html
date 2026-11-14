@@ -1,247 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Phishing Email Detector</title>
-<style>
-  
-  :root {
-    --bg:  #254117;
-    --card: #2a3648;
-    --text: #e2e8f0;
-    --muted: #FFFDD0;
-    --accent: #38bdf8;
-    --danger: #f87171;
-    --safe: #4ade80;
-    --border: #B0CFDE;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dipanjan Nandi — Cybersecurity &amp; AI Developer</title>
+  <meta name="description" content="Portfolio of Dipanjan Nandi, a security-focused Computer Science undergraduate building AI-powered threat intelligence, forensic tooling and identity verification systems.">
+  <meta name="author" content="Dipanjan Nandi">
+  <meta name="theme-color" content="#0a0a1f">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dipanjan Nandi — Cybersecurity &amp; AI Developer">
+  <meta property="og:description" content="Defending systems with intelligent security. Email forensics, threat intelligence and AI-driven document screening.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dipanjan Nandi — Cybersecurity &amp; AI Developer">
+  <meta name="twitter:description" content="Defending systems with intelligent security.">
+  <meta name="twitter:image" content="assets/og-image.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <noscript>
+    <style>
+      @media (max-width: 940px) {
+        .nav {
+          flex-wrap: wrap;
+        }
+
+        .nav__toggle {
+          display: none;
+        }
+
+        .nav__panel {
+          position: static;
+          display: block;
+          width: 100%;
+          margin-top: 8px;
+          padding: 0;
+          border: 0;
+          background: transparent;
+          box-shadow: none;
+        }
+
+        .nav__list {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 2px;
+        }
+
+        .nav__link {
+          padding: 8px 10px;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </noscript>
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dipanjan Nandi",
+    "jobTitle": "Cybersecurity & AI Developer",
+    "description": "Security-focused Computer Science undergraduate building AI-powered threat intelligence, forensic tooling and identity verification systems.",
+    "email": "dipanjann804@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "West Bengal",
+      "addressCountry": "IN"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Guru Nanak Institute of Technology (MAKAUT)"
+    },
+    "sameAs": [
+      "https://github.com/dipanjann804-svg",
+      "https://www.linkedin.com/in/dipanjan-nandi-754028374"
+    ],
+    "knowsLanguage": ["English", "Bengali", "Hindi"],
+    "knowsAbout": [
+      "Cybersecurity",
+      "Email header forensics",
+      "Threat intelligence",
+      "Vulnerability analysis",
+      "Penetration testing",
+      "Malware analysis",
+      "AI-driven data analytics",
+      "NLP threat classification",
+      "OCR extraction",
+      "Explainable risk scoring"
+    ]
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-  }
-  .container { width: 100%; max-width: 640px; }
-  h1 { font-size: 1.5rem; margin-bottom: 4px; }
-  p.subtitle { color: var(--muted); margin-top: 0; margin-bottom: 24px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 20px;
-  }
-  .model-badge {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-  .model-badge strong { color: var(--accent); font-size: 1.1rem; }
-  .model-badge .toggle-link { color: var(--accent); cursor: pointer; text-decoration: underline; font-size: 0.8rem; }
-  #modelDetails { display: none; margin-top: 16px; }
-  #modelDetails img { width: 100%; border-radius: 8px; margin-top: 8px; }
-  #importanceList { font-size: 0.85rem; margin-top: 8px; padding-left: 0; list-style: none; }
-  #importanceList li { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid var(--border); color: var(--muted); }
-  #importanceList li span:last-child { color: var(--text); }
-  label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
-  input, textarea {
-    width: 100%;
-    background: #CCCCFF;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: #0f172a;
-    padding: 10px 12px;
-    font-size: 0.95rem bold;
-    margin-bottom: 16px;
-    font-family: inherit;
-    resize: vertical;
-  }
-  textarea { min-height: 140px; }
-  button {
-    background: var(--accent);
-    color: #0f172a;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 0.95rem;
-  }
-  button:hover { opacity: 0.9; }
-  button:disabled { opacity: 0.5; cursor: not-allowed; }
-  #result { display: none; }
-  .verdict {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .verdict.phishing { color: var(--danger); }
-  .verdict.legitimate { color: var(--safe); }
-  .confidence { color: var(--muted); margin-bottom: 16px; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-  td { padding: 4px 0; border-bottom: 1px solid var(--border); color: var(--muted); }
-  td:last-child { text-align: right; color: var(--text); }
-  .error { color: var(--danger); margin-top: 12px; }
-</style>
+  </script>
 </head>
 <body>
-<div class="container">
-  <h1>Phishing Email Detector</h1>
-  <p class="subtitle">Paste an email's sender, subject, and body to check whether it looks like phishing.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="card">
-    <div class="model-badge">
-      <div id="modelBadgeText">Loading model info...</div>
-      <span class="toggle-link" id="toggleDetails" style="display:none;">details ▾</span>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#home" aria-label="DN. — Dipanjan Nandi, back to home">DN<span>.</span></a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+        <span class="sr-only">Open navigation menu</span>
+        <span class="nav__toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <div class="nav__panel" id="primary-menu">
+        <ul class="nav__list">
+          <li><a class="nav__link is-active" href="#home" aria-current="location">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#experience">Experience</a></li>
+          <li><a class="nav__link" href="#certificates">Certificates</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <p class="nav__status"><span class="status-dot" aria-hidden="true"></span>Open to work</p>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 01 — Home -->
+    <section class="section hero" id="home" data-page="01" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__intro">
+          <p class="eyebrow" data-reveal>Cybersecurity &amp; AI Developer</p>
+          <h1 id="hero-title" data-reveal style="--delay: 60ms">Dipanjan <span class="text-accent">Nandi</span></h1>
+          <p class="hero__tagline" data-reveal style="--delay: 120ms">Defending systems with <span class="text-soft">intelligent security</span></p>
+          <p class="hero__meta" data-reveal style="--delay: 180ms">
+            Computer Science undergraduate at GNIT (MAKAUT) <span aria-hidden="true">·</span> West Bengal, India
+          </p>
+          <div class="hero__actions" data-reveal style="--delay: 240ms">
+            <a class="btn btn--secondary" href="#projects">
+              See my work
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn--primary" href="#contact">
+              Get in touch
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__grid">
+          <article class="bento bento--feature" data-reveal style="--delay: 160ms">
+            <span class="chip chip--solid">Open to work</span>
+            <p class="bento__quote">I prioritize explainable security, turning forensic signals into clear, actionable decisions.</p>
+          </article>
+
+          <article class="bento" data-reveal style="--delay: 220ms">
+            <h2 class="bento__title">Open to internships and collaborations</h2>
+            <ul class="chip-row" aria-label="Location and languages">
+              <li class="chip">West Bengal, India</li>
+              <li class="chip">EN · BN · HI</li>
+            </ul>
+          </article>
+
+          <article class="bento" data-reveal style="--delay: 280ms">
+            <h2 class="bento__title">My tech stack</h2>
+            <ul class="chip-row" aria-label="Core technologies">
+              <li class="chip">Python</li>
+              <li class="chip">C</li>
+              <li class="chip">C++</li>
+              <li class="chip">SQL</li>
+              <li class="chip">Git</li>
+              <li class="chip">GitHub</li>
+            </ul>
+          </article>
+
+          <article class="bento" data-reveal style="--delay: 340ms">
+            <p class="bento__statement">Security-first, from email forensics to fake-ID screening.</p>
+            <p class="bento__meta">SIH 2026 <span aria-hidden="true">·</span> Two systems built</p>
+          </article>
+
+          <article class="bento" data-reveal style="--delay: 400ms">
+            <h2 class="bento__title">Want to start a project together?</h2>
+            <a class="btn btn--primary btn--small" href="#contact">
+              Get in touch
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — About -->
+    <section class="section" id="about" data-page="02" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-heading" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">About <span class="text-accent">Me</span></h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="stack">
+            <article class="card about-card" data-reveal>
+              <p class="card-label">Who I am</p>
+              <p class="about-copy">
+                Security-focused Computer Science undergraduate at Guru Nanak Institute of Technology
+                (MAKAUT), with hands-on experience in cybersecurity operations, vulnerability analysis
+                and GenAI-driven data analytics. I architect modular microservices in Python, C and C++,
+                and have built Smart India Hackathon systems for forensic email threat intelligence and
+                fake identity screening.
+              </p>
+            </article>
+
+            <article class="card about-card" data-reveal style="--delay: 80ms">
+              <p class="card-label">Education</p>
+              <ul class="education">
+                <li>
+                  <span class="education__title">Undergraduate, Computer Science</span>
+                  <span class="education__meta">GNIT (MAKAUT) <span aria-hidden="true">·</span> Present</span>
+                </li>
+                <li>
+                  <span class="education__title">Higher Secondary (Class XII)</span>
+                  <span class="education__meta">Pandua Sasi Bhusan Saha High School <span aria-hidden="true">·</span> 2024</span>
+                </li>
+                <li>
+                  <span class="education__title">Secondary Examination (Class X)</span>
+                  <span class="education__meta">Ramakrishna High School <span aria-hidden="true">·</span> 2022</span>
+                </li>
+              </ul>
+              <p class="coursework">
+                <span>Relevant coursework</span>
+                Vulnerability Analysis, Penetration Testing &amp; Incident Handling · Fundamentals of
+                Computing using C and C++ · Discrete Structures &amp; Statistics · Financial Management
+              </p>
+            </article>
+          </div>
+
+          <div class="stats">
+            <article class="stat-card" data-reveal style="--delay: 80ms">
+              <p class="stat-number">03</p>
+              <p class="stat-label">Internships &amp; job simulations</p>
+            </article>
+            <article class="stat-card" data-reveal style="--delay: 160ms">
+              <p class="stat-number">02</p>
+              <p class="stat-label">Smart India Hackathon systems</p>
+            </article>
+            <article class="stat-card" data-reveal style="--delay: 240ms">
+              <p class="stat-number">04</p>
+              <p class="stat-label">Verified certifications</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — Skills -->
+    <section class="section" id="skills" data-page="03" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-heading" data-reveal>
+          <p class="eyebrow">Tech stack</p>
+          <h2 id="skills-title">My <span class="text-accent">Skills</span></h2>
+        </header>
+
+        <div class="skills-grid">
+          <article class="card skill-card" data-reveal>
+            <h3>Programming</h3>
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>C</li>
+              <li>C++</li>
+              <li>SQL</li>
+              <li>Microservice architecture</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card" data-reveal style="--delay: 70ms">
+            <h3>Cybersecurity &amp; Forensics</h3>
+            <ul class="skill-list">
+              <li>Vulnerability Analysis</li>
+              <li>Penetration Testing</li>
+              <li>Incident Handling</li>
+              <li>Email Header Forensics</li>
+              <li>Malware Analysis</li>
+              <li>Web Application Security</li>
+              <li>IP Origin Tracing</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card" data-reveal style="--delay: 140ms">
+            <h3>AI &amp; Data Analytics</h3>
+            <ul class="skill-list">
+              <li>Exploratory Data Analysis</li>
+              <li>Risk Profiling</li>
+              <li>Delinquency Prediction</li>
+              <li>NLP Threat Classification</li>
+              <li>OCR Extraction</li>
+              <li>Explainable Risk Scoring</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card" data-reveal style="--delay: 210ms">
+            <h3>Systems &amp; Hardware</h3>
+            <ul class="skill-list">
+              <li>Hardware diagnostics</li>
+              <li>Preventive Maintenance</li>
+              <li>Networking Fundamentals</li>
+              <li>Operating Systems</li>
+              <li>Git &amp; GitHub</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — Projects -->
+    <section class="section" id="projects" data-page="04" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <header class="section-heading" data-reveal>
+            <p class="eyebrow">Selected work</p>
+            <h2 id="projects-title">Featured <span class="text-accent">Projects</span></h2>
+          </header>
+          <a class="ghost-link" href="https://github.com/dipanjann804-svg?tab=repositories" target="_blank" rel="noopener noreferrer" data-reveal>
+            All repositories
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card project-card--feature" data-reveal>
+            <span class="chip chip--solid">SIH 2026</span>
+            <h3>ThreatScan</h3>
+            <p class="project-copy">
+              AI-powered email threat detection and forensic intelligence: header forensics, IP
+              geolocation tracing, NLP classification and explainable risk scoring.
+            </p>
+
+            <pre class="code-block" tabindex="0" aria-label="Illustrative ThreatScan risk-scoring workflow"><code><span class="code-comment">// explainable risk scoring (illustrative)</span>
+<span class="code-key">risk</span> = correlate(headers, ip_origin, nlp)
+<span class="code-key">report</span> = explain(risk)
+<span class="code-arrow">→</span> analyst triage report generated</code></pre>
+
+            <ul class="tags" aria-label="ThreatScan capabilities">
+              <li class="tag">Header forensics</li>
+              <li class="tag">IP tracing</li>
+              <li class="tag">NLP</li>
+            </ul>
+          </article>
+
+          <div class="project-stack">
+            <article class="project-card" data-reveal style="--delay: 90ms">
+              <span class="chip">SIH · PS 26188</span>
+              <h3>Netraksha</h3>
+              <p class="project-copy">
+                AI-based fake identity and document screening: OCR extraction, structural validation,
+                tampering detection and facial verification microservices.
+              </p>
+              <ul class="tags" aria-label="Netraksha capabilities">
+                <li class="tag">OCR</li>
+                <li class="tag">Tamper detection</li>
+                <li class="tag">Face verification</li>
+              </ul>
+            </article>
+
+            <article class="project-card" data-reveal style="--delay: 160ms">
+              <span class="chip">2025 – 2026</span>
+              <h3>Algorithms Lab</h3>
+              <p class="project-copy">
+                C, C++ and Python implementations of greedy optimization, recursion, modular arithmetic
+                and complexity benchmarking.
+              </p>
+              <ul class="tags" aria-label="Algorithms Lab languages">
+                <li class="tag">C</li>
+                <li class="tag">C++</li>
+                <li class="tag">Python</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — Experience -->
+    <section class="section" id="experience" data-page="05" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section-heading" data-reveal>
+          <p class="eyebrow">Journey</p>
+          <h2 id="experience-title">My <span class="text-accent">Experience</span></h2>
+        </header>
+
+        <div class="experience-grid">
+          <article class="card exp-card" data-reveal>
+            <span class="chip">AUG – SEPT 2026</span>
+            <h3>Cyber Security Intern</h3>
+            <p class="exp-org">Thiranex EduTech LLP <span aria-hidden="true">·</span> Remote</p>
+            <p class="exp-copy">
+              Threat detection, vulnerability assessment and system hardening under industry mentorship,
+              with periodic technical evaluations on incident response.
+            </p>
+            <ul class="tags" aria-label="Focus areas">
+              <li class="tag">Threat detection</li>
+              <li class="tag">Hardening</li>
+            </ul>
+          </article>
+
+          <article class="card exp-card" data-reveal style="--delay: 80ms">
+            <span class="chip">JULY 2026</span>
+            <h3>GenAI Data Analytics</h3>
+            <p class="exp-org">Tata (via Forage) <span aria-hidden="true">·</span> Job Simulation</p>
+            <p class="exp-copy">
+              EDA and customer risk profiling for delinquency, a predictive AI workflow, and an executive
+              report on an AI-driven collections strategy.
+            </p>
+            <ul class="tags" aria-label="Focus areas">
+              <li class="tag">EDA</li>
+              <li class="tag">Risk profiling</li>
+            </ul>
+          </article>
+
+          <article class="card exp-card" data-reveal style="--delay: 160ms">
+            <span class="chip">JUNE – JULY 2026</span>
+            <h3>Cyber Job Simulation</h3>
+            <p class="exp-org">Deloitte (via Forage)</p>
+            <p class="exp-copy">
+              Log inspection, anomaly identification and breach impact evaluation, with structured
+              remediation steps to strengthen cyber resilience.
+            </p>
+            <ul class="tags" aria-label="Focus areas">
+              <li class="tag">Log inspection</li>
+              <li class="tag">Remediation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — Certificates -->
+    <section class="section" id="certificates" data-page="06" aria-labelledby="certificates-title">
+      <div class="container">
+        <header class="section-heading" data-reveal>
+          <p class="eyebrow">Credentials</p>
+          <h2 id="certificates-title">Verified <span class="text-accent">Certificates</span></h2>
+        </header>
+
+        <div class="cert-grid">
+          <article class="card cert-card" data-reveal>
+            <div class="cert-top">
+              <span class="chip">SEPT 2026</span>
+              <span class="cert-index" aria-hidden="true">01</span>
+            </div>
+            <div class="cert-body">
+              <h3>Cyber Security Internship</h3>
+              <p class="cert-issuer">Thiranex EduTech LLP</p>
+            </div>
+          </article>
+
+          <article class="card cert-card" data-reveal style="--delay: 70ms">
+            <div class="cert-top">
+              <span class="chip">JULY 2026</span>
+              <span class="cert-index" aria-hidden="true">02</span>
+            </div>
+            <div class="cert-body">
+              <h3>GenAI Powered Data Analytics</h3>
+              <p class="cert-issuer">Tata / Forage</p>
+            </div>
+          </article>
+
+          <article class="card cert-card" data-reveal style="--delay: 140ms">
+            <div class="cert-top">
+              <span class="chip">JULY 2026</span>
+              <span class="cert-index" aria-hidden="true">03</span>
+            </div>
+            <div class="cert-body">
+              <h3>Cyber Job Simulation</h3>
+              <p class="cert-issuer">Deloitte / Forage</p>
+            </div>
+          </article>
+
+          <article class="card cert-card" data-reveal style="--delay: 210ms">
+            <div class="cert-top">
+              <span class="chip">JUNE 2025</span>
+              <span class="cert-index" aria-hidden="true">04</span>
+            </div>
+            <div class="cert-body">
+              <h3>Computer Hardware Basics</h3>
+              <p class="cert-issuer">Cisco Networking Academy</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — Contact -->
+    <section class="section" id="contact" data-page="07" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-heading" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Get in <span class="text-accent">Touch</span></h2>
+        </header>
+
+        <div class="contact-grid">
+          <article class="contact-card" data-reveal>
+            <h3>Want to start a<br>project together?</h3>
+            <p class="contact-lead">
+              Open to internships, collaborations and conversations around cybersecurity, AI-driven
+              threat intelligence and secure software.
+            </p>
+
+            <div class="contact-list">
+              <a class="contact-row" href="mailto:dipanjann804@gmail.com">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">dipanjann804@gmail.com</span>
+                <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+
+              <a class="contact-row" href="https://www.linkedin.com/in/dipanjan-nandi-754028374" target="_blank" rel="noopener noreferrer">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1 0 3.88 1.94 1.94 0 0 1 0-3.88ZM5.3 10.2h3.3V19H5.3v-8.8Zm5.4 0h3.16v1.2h.05c.44-.83 1.52-1.7 3.13-1.7 3.35 0 3.97 2.2 3.97 5.06V19h-3.3v-3.75c0-.9-.02-2.06-1.25-2.06-1.25 0-1.44.98-1.44 1.99V19h-3.32v-8.8Z"/></svg>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/dipanjan-nandi-754028374</span>
+                <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+
+              <a class="contact-row" href="https://github.com/dipanjann804-svg" target="_blank" rel="noopener noreferrer">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/dipanjann804-svg</span>
+                <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="card contact-form-card" data-reveal style="--delay: 90ms">
+            <h3>Send me a message</h3>
+            <form id="contact-form" action="mailto:dipanjann804@gmail.com" method="post" enctype="text/plain">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project or idea…" required></textarea>
+              </div>
+              <button class="btn btn--primary btn--full" type="submit">
+                Send message
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </button>
+              <p class="form-note">This opens your email app with the message pre-filled.</p>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Dipanjan Nandi</p>
+      <p class="footer-tagline">Built with curiosity, secured by design.</p>
+      <a class="back-to-top" href="#home">
+        Back to top
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
     </div>
-    <div id="modelDetails">
-      <ul id="importanceList"></ul>
-      <img id="confusionMatrixImg" alt="Confusion matrix" style="display:none;">
-    </div>
-  </div>
+  </footer>
 
-  <div class="card">
-    <label for="sender">From (email address)</label>
-    <input id="sender" type="text" placeholder="e.g. billing@example.com">
+  <div class="page-marker" aria-hidden="true"><span id="page-current">01</span><span class="page-marker__sep">/</span>07</div>
 
-    <label for="subject">Subject</label>
-    <input id="subject" type="text" placeholder="e.g. Urgent: Verify your account">
-
-    <label for="body">Body</label>
-    <textarea id="body" placeholder="Paste the email content here..."></textarea>
-
-    <button id="checkBtn" onclick="checkEmail()">Check Email</button>
-    <div id="errorMsg" class="error"></div>
-  </div>
-
-  <div class="card" id="result">
-    <div id="verdict" class="verdict"></div>
-    <div id="confidence" class="confidence"></div>
-    <table id="featureTable"></table>
-  </div>
-</div>
-
-<script>
-async function loadModelInfo() {
-  const badgeText = document.getElementById('modelBadgeText');
-  const toggle = document.getElementById('toggleDetails');
-  const details = document.getElementById('modelDetails');
-  const importanceList = document.getElementById('importanceList');
-  const cmImg = document.getElementById('confusionMatrixImg');
-
-  try {
-    const res = await fetch('/model-info');
-    if (!res.ok) {
-      badgeText.textContent = res.status === 404
-        ? 'Backend API not found. Please ensure the Python Flask backend is running.'
-        : 'Model not trained yet — run train_model.py.';
-      return;
-    }
-    const contentType = res.headers.get('content-type') || '';
-    if (!contentType.includes('application/json')) {
-      badgeText.textContent = 'API returned non-JSON response. Ensure Flask server is running.';
-      return;
-    }
-    const data = await res.json();
-
-    const acc = data.accuracy != null ? (data.accuracy * 100).toFixed(1) + '%' : 'n/a';
-    badgeText.innerHTML = `Model accuracy: <strong>${acc}</strong> on held-out test set`;
-
-    importanceList.innerHTML = '';
-    (data.feature_importances || []).slice(0, 6).forEach(fi => {
-      const li = document.createElement('li');
-      li.innerHTML = `<span>${fi.feature}</span><span>${fi.importance}</span>`;
-      importanceList.appendChild(li);
-    });
-
-    if (data.has_confusion_matrix) {
-      cmImg.src = '/confusion-matrix?_=' + Date.now();
-      cmImg.style.display = 'block';
-    }
-
-    toggle.style.display = 'inline';
-    toggle.onclick = () => {
-      const isOpen = details.style.display === 'block';
-      details.style.display = isOpen ? 'none' : 'block';
-      toggle.textContent = isOpen ? 'details ▾' : 'details ▴';
-    };
-  } catch (e) {
-    badgeText.textContent = 'Could not load model info: ' + e.message;
-  }
-}
-
-async function checkEmail() {
-  const sender = document.getElementById('sender').value;
-  const subject = document.getElementById('subject').value;
-  const body = document.getElementById('body').value;
-  const btn = document.getElementById('checkBtn');
-  const errorMsg = document.getElementById('errorMsg');
-  const resultCard = document.getElementById('result');
-
-  errorMsg.textContent = '';
-  resultCard.style.display = 'none';
-
-  if (!subject && !body) {
-    errorMsg.textContent = 'Please enter a subject or body.';
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Checking...';
-
-  try {
-    const res = await fetch('/predict', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ sender, subject, body })
-    });
-
-    const contentType = res.headers.get('content-type') || '';
-    if (!contentType.includes('application/json')) {
-      const errorText = await res.text();
-      throw new Error(`Server returned HTTP ${res.status} (${res.statusText}). Make sure your Flask backend server is running and not hosted as static HTML.`);
-    }
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      errorMsg.textContent = data.error || 'Something went wrong.';
-      return;
-    }
-
-    const verdictEl = document.getElementById('verdict');
-    verdictEl.textContent = data.display_label === 'Phishing' ? '⚠️ Phishing' : '✅ Safe';
-    verdictEl.className = 'verdict ' + data.label;
-
-    document.getElementById('confidence').textContent =
-      'Confidence: ' + (data.confidence * 100).toFixed(1) + '%';
-
-    const table = document.getElementById('featureTable');
-    table.innerHTML = '';
-    for (const [key, value] of Object.entries(data.features)) {
-      const row = document.createElement('tr');
-      row.innerHTML = `<td>${key}</td><td>${value}</td>`;
-      table.appendChild(row);
-    }
-
-    resultCard.style.display = 'block';
-  } catch (e) {
-    errorMsg.textContent = 'Request failed: ' + e.message;
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Check Email';
-  }
-}
-
-loadModelInfo();
-</script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
