@@ -7,23 +7,20 @@
   <title>Dipanjan Nandi — Cybersecurity &amp; AI Developer</title>
   <meta name="description" content="Portfolio of Dipanjan Nandi, a security-focused Computer Science undergraduate building AI-powered threat intelligence, forensic tooling and identity verification systems.">
   <meta name="author" content="Dipanjan Nandi">
-  <meta name="theme-color" content="#0a0a1f">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f3f7f6">
+  <meta name="color-scheme" content="light">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dipanjan Nandi">
   <meta property="og:title" content="Dipanjan Nandi — Cybersecurity &amp; AI Developer">
-  <meta property="og:description" content="Defending systems with intelligent security. Email forensics, threat intelligence and AI-driven document screening.">
+  <meta property="og:description" content="Security-first web tools, email forensics and AI-driven document screening.">
   <meta property="og:image" content="assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dipanjan Nandi — Cybersecurity &amp; AI Developer">
-  <meta name="twitter:description" content="Defending systems with intelligent security.">
+  <meta name="twitter:description" content="Security-first web tools, email forensics and AI-driven document screening.">
   <meta name="twitter:image" content="assets/og-image.png">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <noscript>
     <style>
@@ -54,13 +51,8 @@
         }
 
         .nav__link {
-          padding: 8px 10px;
-          font-size: 0.8rem;
-        }
-
-        .nav__cta {
-          display: inline-flex;
-          margin-left: auto;
+          padding: 8px 12px;
+          font-size: 0.95rem;
         }
       }
     </style>
@@ -97,9 +89,7 @@
       "Penetration testing",
       "Malware analysis",
       "AI-driven data analytics",
-      "NLP threat classification",
-      "OCR extraction",
-      "Explainable risk scoring"
+      "OCR extraction"
     ]
   }
   </script>
@@ -109,10 +99,11 @@
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a class="nav__brand" href="index.html">
-        <span class="nav__mark" aria-hidden="true">DN</span>
-        <span class="nav__word">dipanjan<span>.</span></span>
-        <span class="sr-only">Dipanjan Nandi — home</span>
+      <a class="nav__brand" href="index.html" aria-label="dipanjan.dev — Dipanjan Nandi, home">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4.8 3 8.6 7 10 4-1.4 7-5.2 7-10V6l-7-3Z"/></svg>
+        </span>
+        <span class="nav__word">dipanjan<span>.dev</span></span>
       </a>
 
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
@@ -130,198 +121,199 @@
         </ul>
       </div>
 
-      <a class="btn btn--primary nav__cta" href="contact.html">Hire me</a>
+      <a class="btn btn--cta btn--small nav__cta" href="contact.html">Let's talk</a>
     </nav>
   </header>
 
   <main id="main">
-    <!-- 01 — Home -->
+    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero__layout">
-          <div class="hero__copy">
-            <div class="hero__top">
-              <p class="eyebrow">01 · Home</p>
-              <p class="pill-live"><span class="status-dot" aria-hidden="true"></span>Open to work</p>
-            </div>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="badge"><span class="status-dot" aria-hidden="true"></span>Open to internships &amp; collaborations</p>
+          <p class="hero__hi">Hi, I'm</p>
+          <h1 class="hero__name" id="hero-title">Dipanjan Nandi</h1>
+          <p class="hero__role">Cybersecurity · Forensics · AI Analytics</p>
+          <p class="hero__lead">
+            I build privacy-first security tools and AI-driven analytics, turning research ideas
+            into working prototypes.
+          </p>
 
-            <h1 class="hero__title" id="hero-title">Dipanjan <span class="text-accent">Nandi</span></h1>
-            <p class="hero__role">Cybersecurity &amp; AI developer</p>
-            <p class="hero__lead">
-              I design and build security-first web tools — from email threat intelligence and
-              phishing detection to credential vaults and the interfaces around them.
-            </p>
-
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="projects.html">
-                View projects
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
-              <a class="btn btn--secondary" href="assets/Dipanjan-Nandi-CV.pdf" download="Dipanjan-Nandi-CV.pdf" type="application/pdf">
-                Download CV
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-              </a>
-            </div>
-
-            <ul class="hero__meta" aria-label="Location, languages and work preference">
-              <li class="chip">West Bengal, India</li>
-              <li class="chip">EN · BN · HI</li>
-              <li class="chip">Remote / hybrid</li>
-            </ul>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="projects.html">
+              View projects
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--outline" href="assets/Dipanjan-Nandi-CV.pdf" download="Dipanjan-Nandi-CV.pdf" type="application/pdf">
+              Download CV
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+            </a>
           </div>
 
-          <aside class="profile-card" aria-label="Profile summary">
-            <div class="profile-card__visual">
-              <span class="profile-card__monogram" aria-hidden="true">DN</span>
+          <dl class="hero__stats">
+            <div>
+              <dt>03</dt>
+              <dd>Internships &amp; job simulations</dd>
             </div>
-            <div class="profile-card__body">
-              <p class="profile-card__name">Dipanjan Nandi</p>
-              <p class="profile-card__role">B.Tech CSE · GNIT (MAKAUT)</p>
-              <dl class="profile-card__facts">
-                <div>
-                  <dt>Focus</dt>
-                  <dd>Threat intelligence &amp; secure web</dd>
-                </div>
-                <div>
-                  <dt>Core stack</dt>
-                  <dd>Python · Flask · JavaScript</dd>
-                </div>
-                <div>
-                  <dt>Status</dt>
-                  <dd><span class="status-dot" aria-hidden="true"></span>Open to work</dd>
-                </div>
-              </dl>
+            <div>
+              <dt>01</dt>
+              <dd>SIH 2026 build</dd>
             </div>
-          </aside>
+            <div>
+              <dt>04</dt>
+              <dd>Verified credentials</dd>
+            </div>
+          </dl>
         </div>
 
-        <div class="hero__stats" data-reveal>
-          <div class="stat">
-            <p class="stat__value">03</p>
-            <p class="stat__label">Internships &amp; job simulations</p>
+        <div class="hero__media">
+          <span class="hero__ring" aria-hidden="true"></span>
+          <span class="hero__blob" aria-hidden="true"></span>
+
+          <figure class="photo-card">
+            <div class="photo-card__frame">
+              <img src="assets/profile.jpg" alt="Dipanjan Nandi" width="900" height="1200" loading="eager" decoding="async">
+            </div>
+          </figure>
+
+          <div class="float-card float-card--status">
+            <p class="float-card__title"><span class="status-dot" aria-hidden="true"></span>Open to work</p>
+            <p class="float-card__meta">Remote / Hybrid</p>
           </div>
-          <div class="stat">
-            <p class="stat__value">02</p>
-            <p class="stat__label">Smart India Hackathon builds</p>
+
+          <div class="float-card float-card--work">
+            <p class="float-card__title">
+              <span class="dot" aria-hidden="true"></span>
+              SIH 2026
+            </p>
+            <p class="float-card__meta">Netraksha · ThreatOptic</p>
           </div>
-          <div class="stat">
-            <p class="stat__value">04</p>
-            <p class="stat__label">Verified credentials</p>
-          </div>
-          <div class="stat">
-            <p class="stat__value">03</p>
-            <p class="stat__label">Live projects</p>
-          </div>
+
+          <p class="code-chip" aria-hidden="true"><span>$</span> verify --identity</p>
         </div>
       </div>
     </section>
 
-    <!-- Featured work -->
-    <section class="section" aria-labelledby="featured-title">
+    <!-- Selected work -->
+    <section class="section" aria-labelledby="work-title">
       <div class="container">
-        <div class="section-head">
-          <header class="section-heading" data-reveal>
-            <p class="eyebrow">Selected work</p>
-            <h2 id="featured-title">Things I've <span class="text-accent">built</span></h2>
-          </header>
-          <a class="ghost-link" href="projects.html" data-reveal>
+        <div class="section-head" data-reveal>
+          <div>
+            <h2 id="work-title">Selected work</h2>
+            <p>Live security tools and hackathon builds, each with a working demo.</p>
+          </div>
+          <a class="link-arrow" href="projects.html">
             All projects
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
 
-        <div class="cards-3">
-          <article class="project-card" data-reveal>
-            <div class="project-thumb project-thumb--violet">
-              <span class="project-thumb__badge">Live</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5 9 11v11c0 9.6 6.2 17.2 15 21 8.8-3.8 15-11.4 15-21V11L24 5Z"/><circle cx="24" cy="21" r="4.5"/><path d="M24 25.5V31"/></svg>
-            </div>
-            <div class="project-body">
-              <h3>Secure Vault System</h3>
-              <p class="project-copy">
-                An encrypted credential vault with authenticated sessions, hashed passwords and
-                protected routes.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li class="tag">Flask</li>
-                <li class="tag">Security</li>
-              </ul>
-              <div class="project-links">
-                <a class="project-link" href="https://secure-vault-system.onrender.com/" target="_blank" rel="noopener noreferrer">
-                  Live demo
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
+        <div class="card-grid">
+          <article class="p-card p-card--mint" data-reveal>
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h3>Secure Vault System</h3>
+                <p class="p-card__meta">Live web app</p>
               </div>
+              <a class="p-card__go" href="https://secure-vault-system.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open the Secure Vault System live demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
             </div>
+            <p class="p-card__copy">Credential vault with authenticated sessions, hashed passwords and protected routes.</p>
+            <ul class="p-card__tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Auth</li>
+              <li class="tag">Security</li>
+            </ul>
           </article>
 
-          <article class="project-card" data-reveal style="--delay: 90ms">
-            <div class="project-thumb project-thumb--teal">
-              <span class="project-thumb__badge">Live</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="38" height="25" rx="4"/><path d="m6 16 18 12 18-12"/><circle cx="37" cy="11" r="7"/><path d="M37 7.5v4M37 14.5h.01"/></svg>
-            </div>
-            <div class="project-body">
-              <h3>Phishing Email Detection</h3>
-              <p class="project-copy">
-                A detection app that scores incoming emails for phishing risk and reports an
-                explainable verdict.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li class="tag">Python</li>
-                <li class="tag">Classification</li>
-              </ul>
-              <div class="project-links">
-                <a class="project-link" href="https://phishing-email-detection-green.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Live demo
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
+          <article class="p-card p-card--butter" data-reveal style="--delay: 80ms">
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="m4 8 8 6 8-6"/><path d="M17 3.5 20.5 7 17 10.5"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h3>Phishing Email Detection</h3>
+                <p class="p-card__meta">Live web app</p>
               </div>
+              <a class="p-card__go" href="https://phishing-email-detection-green.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Phishing Email Detection live demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
             </div>
+            <p class="p-card__copy">Scores incoming emails for phishing risk and returns an explainable verdict.</p>
+            <ul class="p-card__tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Detection</li>
+              <li class="tag">AI</li>
+            </ul>
           </article>
 
-          <article class="project-card" data-reveal style="--delay: 180ms">
-            <div class="project-thumb project-thumb--amber">
-              <span class="project-thumb__badge">Live</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="21" r="7"/><path d="m23 26 14 14M31 34l4-4M35 38l4-4"/></svg>
-            </div>
-            <div class="project-body">
-              <h3>Password Generator</h3>
-              <p class="project-copy">
-                A browser-based generator for strong, configurable passwords with length and
-                character-set controls.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li class="tag">JavaScript</li>
-                <li class="tag">CSS3</li>
-              </ul>
-              <div class="project-links">
-                <a class="project-link" href="https://password-generator-sandy-phi.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Live demo
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
+          <article class="p-card p-card--lilac" data-reveal style="--delay: 160ms">
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4.8 3 8.6 7 10 4-1.4 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h3>Netraksha</h3>
+                <p class="p-card__meta">Smart India Hackathon 2026</p>
               </div>
+              <a class="p-card__go" href="projects.html" aria-label="Read more about Netraksha">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
             </div>
+            <p class="p-card__copy">AI screening that flags fake identities and forged documents, end to end.</p>
+            <ul class="p-card__tags" aria-label="Capabilities">
+              <li class="tag">OCR</li>
+              <li class="tag">Forensics</li>
+              <li class="tag">AI</li>
+            </ul>
+          </article>
+
+          <article class="p-card p-card--blue" data-reveal style="--delay: 240ms">
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="10" r="3.5"/><path d="m12 13 6 6M16 17l1.5-1.5"/><path d="M4 20h6"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h3>Password Generator</h3>
+                <p class="p-card__meta">Web tool</p>
+              </div>
+              <a class="p-card__go" href="https://password-generator-sandy-phi.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Password Generator live demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+            <p class="p-card__copy">Strong, configurable passwords generated in the browser with length controls.</p>
+            <ul class="p-card__tags" aria-label="Technologies">
+              <li class="tag">JavaScript</li>
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Call to action -->
-    <section class="section" aria-labelledby="cta-title">
+    <!-- GitHub -->
+    <section class="section" aria-labelledby="gh-title">
       <div class="container">
-        <div class="cta-band" data-reveal>
-          <div>
-            <h2 id="cta-title">Have a project or a role in mind?</h2>
-            <p>I'm open to internships, collaborations and security-focused builds. Tell me what you're working on.</p>
+        <div class="gh-band" data-reveal>
+          <div class="gh-band__inner">
+            <span class="gh-band__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+            </span>
+            <div>
+              <h2 id="gh-title">More on GitHub</h2>
+              <p>Every repository lives on my GitHub profile — live projects, hackathon builds, experiments and coursework.</p>
+              <p class="gh-band__handle">github.com/dipanjann804-svg</p>
+            </div>
           </div>
-          <div class="cta-band__actions">
-            <a class="btn btn--primary" href="contact.html">
-              Get in touch
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-            <a class="btn btn--secondary" href="assets/Dipanjan-Nandi-CV.pdf" download="Dipanjan-Nandi-CV.pdf" type="application/pdf">
-              Download CV
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          <div class="gh-band__actions">
+            <a class="btn btn--cta" href="https://github.com/dipanjann804-svg?tab=repositories" target="_blank" rel="noopener noreferrer">
+              Browse all repositories
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
           </div>
         </div>
@@ -331,15 +323,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Dipanjan Nandi</p>
-      <p class="footer-tagline">Built with curiosity, secured by design.</p>
+      <p><strong>Dipanjan Nandi</strong> · © <span id="year">2026</span></p>
+      <p>Built with curiosity, secured by design.</p>
       <div class="footer-links">
         <a href="https://github.com/dipanjann804-svg" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/dipanjan-nandi-754028374" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="back-to-top" href="#main">
-          Back to top
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        </a>
+        <a href="mailto:dipanjann804@gmail.com">Email</a>
+        <a href="#main">Back to top</a>
       </div>
     </div>
   </footer>

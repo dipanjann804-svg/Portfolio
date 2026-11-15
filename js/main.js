@@ -122,7 +122,8 @@
     if (!list) return;
 
     const items = Array.from(list.querySelectorAll("[data-categories]"));
-    const count = group.querySelector("[data-filter-count]");
+    const count =
+      group.querySelector("[data-filter-count]") || document.querySelector("[data-filter-count]");
     const noun = group.dataset.filterNoun || "item";
     const buttons = Array.from(group.querySelectorAll(".filter"));
 
@@ -133,7 +134,10 @@
         const categories = (item.dataset.categories || "").split(/\s+/);
         const show = value === "all" || categories.indexOf(value) !== -1;
         item.hidden = !show;
-        if (show) visible += 1;
+        if (show) {
+          visible += 1;
+          if (item.hasAttribute("data-reveal")) item.classList.add("is-visible");
+        }
       });
 
       buttons.forEach((button) => {
@@ -166,14 +170,19 @@
 
   const copyText = async (value) => {
     if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(value);
-      return;
+      try {
+        await navigator.clipboard.writeText(value);
+        return;
+      } catch (error) {
+        /* fall through to the legacy path */
+      }
     }
 
     const helper = document.createElement("textarea");
     helper.value = value;
     helper.setAttribute("readonly", "");
     helper.style.position = "fixed";
+    helper.style.top = "0";
     helper.style.opacity = "0";
     document.body.appendChild(helper);
     helper.select();

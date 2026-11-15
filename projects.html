@@ -5,25 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Projects — Dipanjan Nandi</title>
-  <meta name="description" content="Live projects and hackathon builds by Dipanjan Nandi: Secure Vault System, Phishing Email Detection, Password Generator, ThreatScan and Netraksha.">
+  <meta name="description" content="Projects by Dipanjan Nandi: Secure Vault System, Phishing Email Detection, Password Generator and Netraksha — live demos, source code and hackathon builds.">
   <meta name="author" content="Dipanjan Nandi">
-  <meta name="theme-color" content="#0a0a1f">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f3f7f6">
+  <meta name="color-scheme" content="light">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dipanjan Nandi">
   <meta property="og:title" content="Projects — Dipanjan Nandi">
-  <meta property="og:description" content="Live security tools, AI experiments and Smart India Hackathon systems.">
+  <meta property="og:description" content="Security, forensics and AI projects built recently.">
   <meta property="og:image" content="assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Projects — Dipanjan Nandi">
-  <meta name="twitter:description" content="Live security tools, AI experiments and Smart India Hackathon systems.">
+  <meta name="twitter:description" content="Security, forensics and AI projects built recently.">
   <meta name="twitter:image" content="assets/og-image.png">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <noscript>
     <style>
@@ -54,13 +51,8 @@
         }
 
         .nav__link {
-          padding: 8px 10px;
-          font-size: 0.8rem;
-        }
-
-        .nav__cta {
-          display: inline-flex;
-          margin-left: auto;
+          padding: 8px 12px;
+          font-size: 0.95rem;
         }
       }
     </style>
@@ -72,10 +64,11 @@
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a class="nav__brand" href="index.html">
-        <span class="nav__mark" aria-hidden="true">DN</span>
-        <span class="nav__word">dipanjan<span>.</span></span>
-        <span class="sr-only">Dipanjan Nandi — home</span>
+      <a class="nav__brand" href="index.html" aria-label="dipanjan.dev — Dipanjan Nandi, home">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4.8 3 8.6 7 10 4-1.4 7-5.2 7-10V6l-7-3Z"/></svg>
+        </span>
+        <span class="nav__word">dipanjan<span>.dev</span></span>
       </a>
 
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
@@ -93,213 +86,167 @@
         </ul>
       </div>
 
-      <a class="btn btn--primary nav__cta" href="contact.html">Hire me</a>
+      <a class="btn btn--cta btn--small nav__cta" href="contact.html">Let's talk</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="page-intro" aria-labelledby="projects-title">
       <div class="container">
-        <div class="page-intro__top">
-          <p class="eyebrow">02 · Work</p>
-          <p class="page-count">02 / 05</p>
+        <div class="work-head">
+          <div>
+            <h1 id="projects-title">Selected work</h1>
+            <p>Security, forensics and AI projects built recently.</p>
+          </div>
+
+          <div class="toolbar" data-filter-group="projects" data-filter-noun="project">
+            <div class="filters" role="group" aria-label="Filter projects by category">
+              <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter" type="button" data-filter="security" aria-pressed="false">Security</button>
+              <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI / ML</button>
+              <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
+            </div>
+          </div>
         </div>
-        <h1 id="projects-title">Selected <span class="text-accent">work</span></h1>
-        <p class="page-intro__lead">
-          Live security tools, AI experiments and hackathon systems. Each live build links to a
-          working demo and its source code.
-        </p>
+
+        <p class="filter-count" data-filter-count role="status" aria-live="polite">4 projects</p>
       </div>
     </section>
 
     <section class="page-body" aria-label="Project list">
       <div class="container">
-        <div class="toolbar" data-filter-group="projects" data-filter-noun="project">
-          <div class="filters" role="group" aria-label="Filter projects by category">
-            <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
-            <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
-            <button class="filter" type="button" data-filter="security" aria-pressed="false">Security</button>
-            <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI &amp; data</button>
-            <button class="filter" type="button" data-filter="academic" aria-pressed="false">Academic</button>
-          </div>
-          <p class="filter-count" data-filter-count role="status" aria-live="polite">6 projects</p>
+        <div class="card-grid" data-filter-list="projects">
+          <article class="p-card p-card--mint" data-categories="web security" data-reveal>
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h2>Secure Vault System</h2>
+                <p class="p-card__meta">Live web app</p>
+              </div>
+              <a class="p-card__go" href="https://github.com/dipanjann804-svg/Secure-Vault-System" target="_blank" rel="noopener noreferrer" aria-label="Secure Vault System source code on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+            <p class="p-card__copy">
+              Credential vault with authenticated sessions, hashed passwords and protected routes,
+              deployed as a live web application.
+            </p>
+            <ul class="p-card__tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Auth</li>
+              <li class="tag">Security</li>
+            </ul>
+          </article>
+
+          <article class="p-card p-card--butter" data-categories="web ai security" data-reveal style="--delay: 70ms">
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="m4 8 8 6 8-6"/><path d="M17 3.5 20.5 7 17 10.5"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h2>Phishing Email Detection</h2>
+                <p class="p-card__meta">Live web app</p>
+              </div>
+              <a class="p-card__go" href="https://github.com/dipanjann804-svg/project-5-Phishing-Email-Detection-project" target="_blank" rel="noopener noreferrer" aria-label="Phishing Email Detection source code on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+            <p class="p-card__copy">
+              Analyses an email's content and signals to produce a phishing risk verdict, packaged
+              as a lightweight demo.
+            </p>
+            <ul class="p-card__tags" aria-label="Technologies">
+              <li class="tag">Python</li>
+              <li class="tag">Detection</li>
+              <li class="tag">AI</li>
+            </ul>
+          </article>
+
+          <article class="p-card p-card--blue" data-categories="web" data-reveal style="--delay: 140ms">
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="10" r="3.5"/><path d="m12 13 6 6M16 17l1.5-1.5"/><path d="M4 20h6"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h2>Password Generator</h2>
+                <p class="p-card__meta">Web tool</p>
+              </div>
+              <a class="p-card__go" href="https://github.com/dipanjann804-svg/Password-Generator" target="_blank" rel="noopener noreferrer" aria-label="Password Generator source code on GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+            <p class="p-card__copy">
+              Generates strong, configurable passwords in the browser with length and character-set
+              controls.
+            </p>
+            <ul class="p-card__tags" aria-label="Technologies">
+              <li class="tag">JavaScript</li>
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+            </ul>
+          </article>
+
+          <article class="p-card p-card--lilac" data-categories="ai security" data-reveal style="--delay: 210ms">
+            <div class="p-card__top">
+              <span class="p-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4.8 3 8.6 7 10 4-1.4 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <div class="p-card__heading">
+                <h2>Netraksha</h2>
+                <p class="p-card__meta">Smart India Hackathon 2026</p>
+              </div>
+              <span class="p-card__go" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4.8 3 8.6 7 10 4-1.4 7-5.2 7-10V6l-7-3Z"/></svg>
+              </span>
+            </div>
+            <p class="p-card__copy">
+              AI-based fake identity and document screening: OCR extraction, structural validation,
+              tamper detection and facial verification microservices.
+            </p>
+            <ul class="p-card__tags" aria-label="Capabilities">
+              <li class="tag">OCR</li>
+              <li class="tag">Tamper detection</li>
+              <li class="tag">AI</li>
+            </ul>
+          </article>
         </div>
 
-        <div class="project-grid" data-filter-list="projects">
-          <article class="project-card" data-categories="web security" data-reveal>
-            <div class="project-thumb project-thumb--violet">
-              <span class="project-thumb__badge">Live</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5 9 11v11c0 9.6 6.2 17.2 15 21 8.8-3.8 15-11.4 15-21V11L24 5Z"/><circle cx="24" cy="21" r="4.5"/><path d="M24 25.5V31"/></svg>
-            </div>
-            <div class="project-body">
-              <h2>Secure Vault System</h2>
-              <p class="project-copy">
-                An encrypted credential vault with authenticated sessions, hashed passwords and
-                protected routes, deployed as a live web app.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li class="tag">Python</li>
-                <li class="tag">Auth</li>
-                <li class="tag">Security</li>
-              </ul>
-              <div class="project-links">
-                <a class="project-link" href="https://secure-vault-system.onrender.com/" target="_blank" rel="noopener noreferrer">
-                  Live demo
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
-                <a class="project-link" href="https://github.com/dipanjann804-svg/Secure-Vault-System" target="_blank" rel="noopener noreferrer">
-                  Code
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-categories="web" data-reveal style="--delay: 70ms">
-            <div class="project-thumb project-thumb--amber">
-              <span class="project-thumb__badge">Live</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="21" r="7"/><path d="m23 26 14 14M31 34l4-4M35 38l4-4"/></svg>
-            </div>
-            <div class="project-body">
-              <h2>Password Generator</h2>
-              <p class="project-copy">
-                Generates strong, configurable passwords in the browser with length and
-                character-set controls.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li class="tag">JavaScript</li>
-                <li class="tag">HTML5</li>
-                <li class="tag">CSS3</li>
-              </ul>
-              <div class="project-links">
-                <a class="project-link" href="https://password-generator-sandy-phi.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Live demo
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
-                <a class="project-link" href="https://github.com/dipanjann804-svg/Password-Generator" target="_blank" rel="noopener noreferrer">
-                  Code
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-categories="ai security" data-reveal style="--delay: 140ms">
-            <div class="project-thumb project-thumb--teal">
-              <span class="project-thumb__badge">Live</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="13" width="38" height="25" rx="4"/><path d="m6 16 18 12 18-12"/><circle cx="37" cy="11" r="7"/><path d="M37 7.5v4M37 14.5h.01"/></svg>
-            </div>
-            <div class="project-body">
-              <h2>Phishing Email Detection</h2>
-              <p class="project-copy">
-                A web app that analyses an email's content and signals to produce a phishing risk
-                verdict, packaged as a lightweight demo.
-              </p>
-              <ul class="tags" aria-label="Technologies">
-                <li class="tag">Python</li>
-                <li class="tag">Detection</li>
-                <li class="tag">Web app</li>
-              </ul>
-              <div class="project-links">
-                <a class="project-link" href="https://phishing-email-detection-green.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  Live demo
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
-                <a class="project-link" href="https://github.com/dipanjann804-svg/project-5-Phishing-Email-Detection-project" target="_blank" rel="noopener noreferrer">
-                  Code
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-categories="security ai" data-reveal>
-            <div class="project-thumb project-thumb--blue">
-              <span class="project-thumb__badge">SIH 2026</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="9"/><path d="M24 24 38 12M24 6v4M42 24h-4M24 42v-4M6 24h4"/></svg>
-            </div>
-            <div class="project-body">
-              <h2>ThreatScan</h2>
-              <p class="project-copy">
-                Forensic intelligence for phishing, spoofing and social engineering: deep email
-                header forensics, IP origin tracing, NLP classification and explainable risk scoring.
-              </p>
-              <ul class="tags" aria-label="Capabilities">
-                <li class="tag">Email forensics</li>
-                <li class="tag">NLP</li>
-                <li class="tag">Risk scoring</li>
-              </ul>
-              <div class="project-links">
-                <p class="project-note">Smart India Hackathon 2026 · Built with a team</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-categories="ai" data-reveal style="--delay: 70ms">
-            <div class="project-thumb project-thumb--rose">
-              <span class="project-thumb__badge">SIH · PS 26188</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c-8.3 0-14 5.7-14 14v5a18 18 0 0 0 2 8"/><path d="M24 13c-4.4 0-7 2.9-7 7v6a24 24 0 0 0 2 9"/><path d="M24 20c-2.8 0-4 2-4 4v7a30 30 0 0 0 1 8"/><path d="M24 27v11"/><path d="M31 9.5c4.6 2.2 7 6.6 7 11.5v4a18 18 0 0 1-2 7"/><path d="M35 30v2"/></svg>
-            </div>
-            <div class="project-body">
-              <h2>Netraksha</h2>
-              <p class="project-copy">
-                AI-based fake identity and document screening: OCR extraction, structural
-                validation, tamper detection and facial verification microservices.
-              </p>
-              <ul class="tags" aria-label="Capabilities">
-                <li class="tag">OCR</li>
-                <li class="tag">Tamper detection</li>
-                <li class="tag">Face verification</li>
-              </ul>
-              <div class="project-links">
-                <p class="project-note">Smart India Hackathon · Problem statement 26188</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card" data-categories="academic" data-reveal style="--delay: 140ms">
-            <div class="project-thumb project-thumb--indigo">
-              <span class="project-thumb__badge">Academic</span>
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16-8 8 8 8M30 16l8 8-8 8M27 11l-6 26"/></svg>
-            </div>
-            <div class="project-body">
-              <h2>Algorithms Lab</h2>
-              <p class="project-copy">
-                C, C++ and Python implementations of greedy optimisation, recursion, modular
-                arithmetic and complexity benchmarking, kept in modular repositories.
-              </p>
-              <ul class="tags" aria-label="Languages">
-                <li class="tag">C</li>
-                <li class="tag">C++</li>
-                <li class="tag">Python</li>
-              </ul>
-              <div class="project-links">
-                <a class="project-link" href="https://github.com/dipanjann804-svg?tab=repositories" target="_blank" rel="noopener noreferrer">
-                  Repositories
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
+        <div class="project-links-row" data-reveal>
+          <a class="btn btn--primary btn--small" href="https://secure-vault-system.onrender.com/" target="_blank" rel="noopener noreferrer">
+            Secure Vault demo
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <a class="btn btn--outline btn--small" href="https://phishing-email-detection-green.vercel.app/" target="_blank" rel="noopener noreferrer">
+            Phishing demo
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <a class="btn btn--outline btn--small" href="https://password-generator-sandy-phi.vercel.app/" target="_blank" rel="noopener noreferrer">
+            Password demo
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="projects-cta-title">
+    <section class="section" aria-labelledby="gh-title">
       <div class="container">
-        <div class="cta-band" data-reveal>
-          <div>
-            <h2 id="projects-cta-title">Want to see how a build works?</h2>
-            <p>Source code for the live projects is on GitHub. I'm happy to walk through the architecture or the security decisions behind any of them.</p>
+        <div class="gh-band" data-reveal>
+          <div class="gh-band__inner">
+            <span class="gh-band__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+            </span>
+            <div>
+              <h2 id="gh-title">More on GitHub</h2>
+              <p>Source code, experiments and every other repository — all in one place.</p>
+              <p class="gh-band__handle">github.com/dipanjann804-svg</p>
+            </div>
           </div>
-          <div class="cta-band__actions">
-            <a class="btn btn--primary" href="contact.html">
-              Ask me about it
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-            <a class="btn btn--secondary" href="https://github.com/dipanjann804-svg?tab=repositories" target="_blank" rel="noopener noreferrer">
-              GitHub
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          <div class="gh-band__actions">
+            <a class="btn btn--cta" href="https://github.com/dipanjann804-svg?tab=repositories" target="_blank" rel="noopener noreferrer">
+              Browse all repositories
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
           </div>
         </div>
@@ -309,15 +256,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Dipanjan Nandi</p>
-      <p class="footer-tagline">Built with curiosity, secured by design.</p>
+      <p><strong>Dipanjan Nandi</strong> · © <span id="year">2026</span></p>
+      <p>Built with curiosity, secured by design.</p>
       <div class="footer-links">
         <a href="https://github.com/dipanjann804-svg" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/dipanjan-nandi-754028374" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="back-to-top" href="#main">
-          Back to top
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        </a>
+        <a href="mailto:dipanjann804@gmail.com">Email</a>
+        <a href="#main">Back to top</a>
       </div>
     </div>
   </footer>
