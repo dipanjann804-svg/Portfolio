@@ -281,10 +281,6 @@ button {
   font-weight: 700;
 }
 
-.nav__cta {
-  flex: none;
-}
-
 .nav__toggle {
   display: none;
   place-items: center;
@@ -1065,7 +1061,7 @@ a.p-card__go:hover {
 }
 
 .about-main {
-  max-width: 780px;
+  max-width: none;
 }
 
 .about-main h2 {
@@ -1075,6 +1071,7 @@ a.p-card__go:hover {
 }
 
 .about-lead {
+  max-width: 92ch;
   margin: 0 0 34px;
   font-size: 1.06rem;
   line-height: 1.72;
@@ -1189,7 +1186,7 @@ a.p-card__go:hover {
   text-transform: uppercase;
 }
 
-.timeline h3 {
+.timeline h4 {
   margin: 0 0 2px;
   font-family: var(--font-sans);
   font-size: 1.05rem;
@@ -1938,6 +1935,52 @@ a.info-card:hover {
   }
 }
 
+/* Wide screens: two-up skill groups and CV-style experience rows */
+@media (min-width: 1100px) {
+  .skills-block {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(36px, 4vw, 64px);
+    align-items: start;
+  }
+
+  .skills-block > .block-title {
+    grid-column: 1 / -1;
+  }
+
+  .skills-block .skill-group {
+    padding: 15px 0;
+  }
+
+  .skills-block .skill-group:nth-last-child(-n + 2) {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .timeline {
+    gap: 30px;
+  }
+
+  .timeline__item {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    column-gap: clamp(30px, 4vw, 56px);
+    align-items: start;
+  }
+
+  .timeline__date,
+  .timeline__item h4,
+  .timeline__org {
+    grid-column: 1;
+  }
+
+  .timeline__copy {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+    margin-top: 0;
+  }
+}
+
 /* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
@@ -1956,10 +1999,6 @@ a.info-card:hover {
 
   .nav__toggle {
     display: grid;
-  }
-
-  .nav__cta {
-    display: none;
   }
 
   .nav__panel {
